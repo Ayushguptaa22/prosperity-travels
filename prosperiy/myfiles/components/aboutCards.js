@@ -3,7 +3,7 @@ import React from "react";
 function AboutCards() {
   return (
     <div>
-      <div ClassName="container1  ">
+      <div className="container1  ">
         <div className="aboutHeading">
           <h2>
             <span className="format">About </span>Us
