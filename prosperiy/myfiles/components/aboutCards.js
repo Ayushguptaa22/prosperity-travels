@@ -12,19 +12,6 @@ function AboutCards() {
         <div className="sectionForAboutus">
           <div className="aboutContent">
             <h2>
-              <span className="format">OUR </span>STORY
-            </h2>
-            <div className="overlay">
-              <p>
-                Prosperity Travels is a leading global travel company that
-                operates multiple contact centers with staffing of more than
-                850+ travel professionals to assist leisure and business.
-                <a href="/about-us.html">read more</a>
-              </p>
-            </div>
-          </div>
-          <div className="aboutContent">
-            <h2>
               <span className="format">VAL</span>UES
             </h2>
             <div className="overlay">

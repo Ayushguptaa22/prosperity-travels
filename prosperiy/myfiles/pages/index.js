@@ -5,6 +5,7 @@ import Whywe from "../components/whywe";
 import MidContent from "../components/midContent";
 import { findDOMNode } from "react-dom";
 import AboutCards from "../components/aboutCards";
+import Whatwedo from "../components/whatwedo";
 export default function Home() {
   return (
     <div>
@@ -20,6 +21,7 @@ export default function Home() {
       <Navbar />
       <MidContent />
       <Whywe />
+      <Whatwedo />
       <AboutCards />
     </div>
   );
