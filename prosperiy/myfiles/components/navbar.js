@@ -27,22 +27,119 @@ const Navbar = () => {
       style={{ backgroundColor: `${color}` }}
       className="fixed left-0 top-0 w-full z-10 ease-in duration-300 navBar"
     >
-      <div className="max-w-[1240px] m-auto flex justify-between items-center p-4 text-white">
+      <div className="max-w-[1240px] m-auto flex justify-between items-center logoClass p-4 text-white">
         <Link href="/">
-          <h1 style={{ color: `${textColor}` }} className="font-bold text-4xl">
-            Captur
-          </h1>
+          <img src="/img/logo.png" />
         </Link>
         <ul style={{ color: `${textColor}` }} className="hidden sm:flex">
-          <li className="p-4">
+          <li className="p-4 ">
             <Link href="/about">About</Link>
           </li>
           <li className="p-4">
             <Link href="/events">Events</Link>
           </li>
-          <li className="p-4">
-            <Link href="/services">Services</Link>
+          <li className="p-4 submenuBar">
+            <Link href="/services  ">Services</Link>
+            <div className="sub-menu mega-menu mega-menu-column-4">
+              <div className="list-item">
+                <h4 className="title">Men's Fashion</h4>
+                <ul>
+                  <li>
+                    <a href="#">Product List</a>
+                  </li>
+                  <li>
+                    <a href="#">Product List</a>
+                  </li>
+                  <li>
+                    <a href="#">Product List</a>
+                  </li>
+                  <li>
+                    <a href="#">Product List</a>
+                  </li>
+                  <li>
+                    <a href="#">Product List</a>
+                  </li>
+                </ul>
+                <h4 className="title">Beauty</h4>
+                <ul>
+                  <li>
+                    <a href="#">Product List</a>
+                  </li>
+                  <li>
+                    <a href="#">Product List</a>
+                  </li>
+                  <li>
+                    <a href="#">Product List</a>
+                  </li>
+                </ul>
+              </div>
+              <div className="list-item">
+                <h4 className="title">Women's Fashion</h4>
+                <ul>
+                  <li>
+                    <a href="#">Product List</a>
+                  </li>
+                  <li>
+                    <a href="#">Product List</a>
+                  </li>
+                  <li>
+                    <a href="#">Product List</a>
+                  </li>
+                  <li>
+                    <a href="#">Product List</a>
+                  </li>
+                </ul>
+                <h4 className="title">Furniture</h4>
+                <ul>
+                  <li>
+                    <a href="#">Product List</a>
+                  </li>
+                  <li>
+                    <a href="#">Product List</a>
+                  </li>
+                  <li>
+                    <a href="#">Product List</a>
+                  </li>
+                  <li>
+                    <a href="#">Product List</a>
+                  </li>
+                </ul>
+              </div>
+              <div className="list-item">
+                <h4 className="title">Home, Kitchen</h4>
+                <ul>
+                  <li>
+                    <a href="#">Product List</a>
+                  </li>
+                  <li>
+                    <a href="#">Product List</a>
+                  </li>
+                  <li>
+                    <a href="#">Product List</a>
+                  </li>
+                  <li>
+                    <a href="#">Product List</a>
+                  </li>
+                  <li>
+                    <a href="#">Product List</a>
+                  </li>
+                  <li>
+                    <a href="#">Product List</a>
+                  </li>
+                  <li>
+                    <a href="#">Product List</a>
+                  </li>
+                  <li>
+                    <a href="#">Product List</a>
+                  </li>
+                  <li>
+                    <a href="#">Product List</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
           </li>
+
           <li className="p-4">
             <Link href="/contact">Contact</Link>
           </li>
