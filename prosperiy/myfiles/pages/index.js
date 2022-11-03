@@ -1,9 +1,9 @@
+import React from "react";
 import Navbar from "../components/navbar";
 import Head from "next/head";
 import Link from "next/link";
 import Whywe from "../components/whywe";
 import MidContent from "../components/midContent";
-import { findDOMNode } from "react-dom";
 import AboutCards from "../components/aboutCards";
 import Whatwedo from "../components/whatwedo";
 export default function Home() {
