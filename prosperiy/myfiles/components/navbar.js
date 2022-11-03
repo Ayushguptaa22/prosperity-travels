@@ -35,13 +35,13 @@ const Navbar = () => {
         </Link>
         <ul style={{ color: `${textColor}` }} className="hidden sm:flex">
           <li className="p-4">
-            <Link href="/">Home</Link>
+            <Link href="/about">About</Link>
           </li>
           <li className="p-4">
-            <Link href="/#gallery">Gallery</Link>
+            <Link href="/events">Events</Link>
           </li>
           <li className="p-4">
-            <Link href="/work">Work</Link>
+            <Link href="/services">Services</Link>
           </li>
           <li className="p-4">
             <Link href="/contact">Contact</Link>
