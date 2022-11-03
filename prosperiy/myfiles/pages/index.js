@@ -1,6 +1,7 @@
 import Navbar from "../components/navbar";
 import Head from "next/head";
 import Link from "next/link";
+import Whywe from "../components/whywe";
 import MidContent from "../components/midContent";
 import { findDOMNode } from "react-dom";
 import AboutCards from "../components/aboutCards";
@@ -18,6 +19,7 @@ export default function Home() {
       </Head>
       <Navbar />
       <MidContent />
+      <Whywe />
       <AboutCards />
     </div>
   );
