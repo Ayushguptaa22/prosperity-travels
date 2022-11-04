@@ -88,6 +88,9 @@ span.format {
   padding-top: 60px;
   width: 30%;
 }
+img.slider-gallery {
+  width: 100%;
+}
 .messageBox {
   border: 6px solid #4d8ced;
   position: relative;

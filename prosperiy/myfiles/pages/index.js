@@ -20,7 +20,7 @@ export default function Home() {
       </Head>
       <Navbar />
       <MidContent />
-      <Slider slides={SliderData}/>
+      <Slider slides={SliderData} />
       <Whywe />
       <Whatwedo />
       <AboutCards />

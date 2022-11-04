@@ -30,7 +30,7 @@ const Navbar = () => {
     >
       <div className="max-w-[1240px] m-auto flex justify-between items-center logoClass p-4 text-white">
         <Link href="/">
-          <img src="/img/logo.png" alt="Prosperity Travels logo " />
+          <img src="/img/logo.png" alt="Prosperity Travels logo" />
         </Link>
         <ul style={{ color: `${textColor}` }} className="hidden sm:flex">
           <li className="p-4 ">
