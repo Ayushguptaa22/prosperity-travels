@@ -8,8 +8,8 @@ import AboutCards from "../components/aboutCards";
 import Whatwedo from "../components/whatwedo";
 import Careers from "../components/careers";
 import Footer from "../components/footer";
-import Slider from "../components/slider";
-
+import Slider from "../components/Slider";
+import { SliderData } from "../components/SliderData";
 export default function Home() {
   return (
     <div>
@@ -18,9 +18,9 @@ export default function Home() {
         <Link rel="preconnect" href="https://fonts.googleapis.com" />
         <Link rel="preconnect" href="https://fonts.gstatic.com" />
       </Head>
-
       <Navbar />
       <MidContent />
+      <Slider slides={SliderData}/>
       <Whywe />
       <Whatwedo />
       <AboutCards />
