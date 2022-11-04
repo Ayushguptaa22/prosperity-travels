@@ -31,11 +31,11 @@ const Slider = ({ slides }) => {
             return (
               <div
                 key={index}
-                className={index === current ? "opacity-[1]" : "opacity-[0]"}
+                className={index === current ? "opacity-[1]" : "opacity-[1]"}
               >
                 <FaArrowCircleLeft
                   onClick={prevSlide}
-                  className="absolute top-[50%] left-[20px] text-white/70 cursor-pointer select-none z-[2]"
+                  className="absolute top-[50%] left-[40px] text-grey cursor-pointer select-none z-[2]"
                   size={40}
                 />
                 {index === current && (
@@ -50,7 +50,7 @@ const Slider = ({ slides }) => {
                 )}
                 <FaArrowCircleRight
                   onClick={nextSlide}
-                  className="absolute top-[50%] right-[20px] text-white/70 cursor-pointer select-none z-[2]"
+                  className="absolute top-[50%] right-[40px] text-grey cursor-pointer select-none z-[2]"
                   size={40}
                 />
               </div>
