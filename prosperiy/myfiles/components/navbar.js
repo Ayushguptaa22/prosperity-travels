@@ -1,197 +1,254 @@
+import React from "react";
+import $ from "jquery";
+import { useEffect } from "react";
 import Link from "next/link";
-import React, { useState, useEffect } from "react";
-import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
-const Navbar = () => {
-  const [nav, setNav] = useState(false);
-  const [color, setColor] = useState("transparent");
-  const [textColor, setTextColor] = useState("white");
-  const [iconColor, setIconColor] = useState("white");
-  const handleNav = () => {
-    setNav(!nav);
-  };
 
+function Navbar() {
   useEffect(() => {
-    const changeColor = () => {
-      if (window.scrollY >= 90) {
-        setColor("#ffffff");
-        setTextColor("#000000");
+    window.onscroll = function () {
+      myFunction();
+    };
+
+    var header = document.getElementById("nav1");
+    var sticky = header.offsetTop;
+
+    function myFunction() {
+      if (window.pageYOffset > sticky) {
+        header.classList.add("sticky");
       } else {
-        setColor("transparent");
-        setTextColor("white");
+        header.classList.remove("sticky");
+      }
+    }
+    const menu = document.querySelector(".menu");
+    const menuMain = menu.querySelector(".menu-main");
+    const goBack = menu.querySelector(".go-back");
+    const menuTrigger = document.querySelector(".mobile-menu-trigger");
+    const closeMenu = menu.querySelector(".mobile-menu-close");
+    let subMenu;
+    menuMain.addEventListener("click", (e) => {
+      if (!menu.classList.contains("active")) {
+        return;
+      }
+      if (e.target.closest(".menu-item-has-children")) {
+        const hasChildren = e.target.closest(".menu-item-has-children");
+        showSubMenu(hasChildren);
+      }
+    });
+    goBack.addEventListener("click", () => {
+      hideSubMenu();
+    });
+    menuTrigger.addEventListener("click", () => {
+      toggleMenu();
+    });
+    closeMenu.addEventListener("click", () => {
+      toggleMenu();
+    });
+    document.querySelector(".menu-overlay").addEventListener("click", () => {
+      toggleMenu();
+    });
+    function toggleMenu() {
+      menu.classList.toggle("active");
+      document.querySelector(".menu-overlay").classList.toggle("active");
+    }
+    function showSubMenu(hasChildren) {
+      subMenu = hasChildren.querySelector(".sub-menu");
+      subMenu.classList.add("active");
+      subMenu.style.animation = "slideLeft 0.5s ease forwards";
+      const menuTitle =
+        hasChildren.querySelector("i").parentNode.childNodes[0].textContent;
+      menu.querySelector(".current-menu-title").innerHTML = menuTitle;
+      menu.querySelector(".mobile-menu-head").classList.add("active");
+    }
+
+    function hideSubMenu() {
+      subMenu.style.animation = "slideRight 0.5s ease forwards";
+      setTimeout(() => {
+        subMenu.classList.remove("active");
+      }, 300);
+      menu.querySelector(".current-menu-title").innerHTML = "";
+      menu.querySelector(".mobile-menu-head").classList.remove("active");
+    }
+
+    window.onresize = function () {
+      if (this.innerWidth > 991) {
+        if (menu.classList.contains("active")) {
+          toggleMenu();
+        }
       }
     };
-    window.addEventListener("scroll", changeColor);
-  }, []);
-
+  });
   return (
-    <div
-      style={{ backgroundColor: `${color}` }}
-      className="fixed left-0 top-0 w-full z-10 ease-in duration-300 navBar"
-    >
-      <div className="max-w-[1240px] m-auto flex justify-between items-center logoClass p-4 text-white">
-        <Link href="/">
-          <img src="/img/logo.png" alt="Prosperity Travels logo" />
-        </Link>
-        <ul style={{ color: `${textColor}` }} className="hidden sm:flex">
-          <li className="p-4 ">
-            <Link href="/about">About</Link>
-          </li>
-          <li className="p-4">
-            <Link href="/events">Events</Link>
-          </li>
-          <li className="p-4 submenuBar">
-            <Link href="/services  ">Services</Link>
-            <div className="sub-menu mega-menu mega-menu-column-4">
-              <div className="list-item">
-                <h4 className="title">About Us</h4>
-                <ul>
-                  <li>
-                    <a href="#">Link</a>
-                  </li>
-                  <li>
-                    <a href="#">Link</a>
-                  </li>
-                  <li>
-                    <a href="#">Link</a>
-                  </li>
-                  <li>
-                    <a href="#">Link</a>
-                  </li>
-                  <li>
-                    <a href="#">Link</a>
-                  </li>
-                </ul>
-                <h4 className="title">About Us</h4>
-                <ul>
-                  <li>
-                    <a href="#">Link</a>
-                  </li>
-                  <li>
-                    <a href="#">Link</a>
-                  </li>
-                  <li>
-                    <a href="#">Link</a>
-                  </li>
-                </ul>
-              </div>
-              <div className="list-item">
-                <h4 className="title">About Us</h4>
-                <ul>
-                  <li>
-                    <a href="#">Link</a>
-                  </li>
-                  <li>
-                    <a href="#">Link</a>
-                  </li>
-                  <li>
-                    <a href="#">Link</a>
-                  </li>
-                  <li>
-                    <a href="#">Link</a>
-                  </li>
-                </ul>
-                <h4 className="title">About Us</h4>
-                <ul>
-                  <li>
-                    <a href="#">Link</a>
-                  </li>
-                  <li>
-                    <a href="#">Link</a>
-                  </li>
-                  <li>
-                    <a href="#">Link</a>
-                  </li>
-                  <li>
-                    <a href="#">Link</a>
-                  </li>
-                </ul>
-              </div>
-              <div className="list-item">
-                <h4 className="title">About Us</h4>
-                <ul>
-                  <li>
-                    <a href="#">Link</a>
-                  </li>
-                  <li>
-                    <a href="#">Link</a>
-                  </li>
-                  <li>
-                    <a href="#">Link</a>
-                  </li>
-                  <li>
-                    <a href="#">Link</a>
-                  </li>
-                  <li>
-                    <a href="#">Link</a>
-                  </li>
-                  <li>
-                    <a href="#">Link</a>
-                  </li>
-                  <li>
-                    <a href="#">Link</a>
-                  </li>
-                  <li>
-                    <a href="#">Link</a>
-                  </li>
-                  <li>
-                    <a href="#">Link</a>
-                  </li>
-                </ul>
+    <>
+      <header1 id="nav1" className="header1">
+        <div className="container">
+          <div className="row v-center">
+            <div className="header1-item item-left">
+              <div className="logo">
+                <a href="#">
+                  <img src="/img/logo.png" alt="" />
+                </a>
               </div>
             </div>
-          </li>
-
-          <li className="p-4">
-            <Link href="/contact">Contact</Link>
-          </li>
-        </ul>
-
-        {/* Mobile Button */}
-        <div onClick={handleNav} className="block sm:hidden z-10">
-          {nav ? (
-            <AiOutlineClose size={20} style={{ color: `${iconColor}` }} />
-          ) : (
-            <AiOutlineMenu size={20} style={{ color: `${textColor}` }} />
-          )}
+            <div className="header1-item item-center">
+              <div className="menu-overlay"></div>
+              <nav className="menu">
+                <div className="mobile-menu-head">
+                  <div className="go-back">
+                    <i className="fa fa-angle-left"></i>
+                  </div>
+                  <div className="current-menu-title"></div>
+                  <div className="mobile-menu-close">×</div>
+                </div>
+                <ul className="menu-main">
+                  <li>
+                    <Link href="/">Home</Link>
+                  </li>
+                  <li className="menu-item-has-children">
+                    <Link href="/">About</Link>
+                  </li>
+                  <li className="menu-item-has-children">
+                    <Link href="/">Services</Link>
+                    <div className="sub-menu mega-menu mega-menu-column-4">
+                      <div className="list-item">
+                        <h4 className="title">Men's Fashion</h4>
+                        <ul>
+                          <li>
+                            <a href="#">Product List</a>
+                          </li>
+                          <li>
+                            <a href="#">Product List</a>
+                          </li>
+                          <li>
+                            <a href="#">Product List</a>
+                          </li>
+                          <li>
+                            <a href="#">Product List</a>
+                          </li>
+                          <li>
+                            <a href="#">Product List</a>
+                          </li>
+                        </ul>
+                        <h4 className="title">Beauty</h4>
+                        <ul>
+                          <li>
+                            <a href="#">Product List</a>
+                          </li>
+                          <li>
+                            <a href="#">Product List</a>
+                          </li>
+                          <li>
+                            <a href="#">Product List</a>
+                          </li>
+                        </ul>
+                      </div>
+                      <div className="list-item">
+                        <h4 className="title">Women's Fashion</h4>
+                        <ul>
+                          <li>
+                            <a href="#">Product List</a>
+                          </li>
+                          <li>
+                            <a href="#">Product List</a>
+                          </li>
+                          <li>
+                            <a href="#">Product List</a>
+                          </li>
+                          <li>
+                            <a href="#">Product List</a>
+                          </li>
+                        </ul>
+                        <h4 className="title">Furniture</h4>
+                        <ul>
+                          <li>
+                            <a href="#">Product List</a>
+                          </li>
+                          <li>
+                            <a href="#">Product List</a>
+                          </li>
+                          <li>
+                            <a href="#">Product List</a>
+                          </li>
+                          <li>
+                            <a href="#">Product List</a>
+                          </li>
+                        </ul>
+                      </div>
+                      <div className="list-item">
+                        <h4 className="title">Home, Kitchen</h4>
+                        <ul>
+                          <li>
+                            <a href="#">Product List</a>
+                          </li>
+                          <li>
+                            <a href="#">Product List</a>
+                          </li>
+                          <li>
+                            <a href="#">Product List</a>
+                          </li>
+                          <li>
+                            <a href="#">Product List</a>
+                          </li>
+                          <li>
+                            <a href="#">Product List</a>
+                          </li>
+                          <li>
+                            <a href="#">Product List</a>
+                          </li>
+                          <li>
+                            <a href="#">Product List</a>
+                          </li>
+                          <li>
+                            <a href="#">Product List</a>
+                          </li>
+                          <li>
+                            <a href="#">Product List</a>
+                          </li>
+                        </ul>
+                      </div>
+                      <div className="list-item"></div>
+                    </div>
+                  </li>
+                  <li className="menu-item-has-children">
+                    <Link href="/"></Link>
+                    <div className="sub-menu single-column-menu">
+                      <ul>
+                        <li>
+                          <a href="#">Standard Layout</a>
+                        </li>
+                        <li>
+                          <a href="#">Grid Layout</a>
+                        </li>
+                        <li>
+                          <a href="#">single Post Layout</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li className="menu-item-has-children">
+                    <Link href="/events">Events</Link>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+            <div className="header1-item item-right">
+              <a href="#">
+                <i className="fas fa-search"></i>
+              </a>
+              <a href="#">
+                <i className="far fa-heart"></i>
+              </a>
+              <a href="#">
+                <i className="fas fa-shopping-cart"></i>
+              </a>
+              <div className="mobile-menu-trigger">
+                <span></span>
+              </div>
+            </div>
+          </div>
         </div>
-        {/* Mobile Menu */}
-        <div
-          className={
-            nav
-              ? "sm:hidden absolute top-0 left-0 right-0 bottom-0 flex justify-center items-center w-full h-screen bg-black text-center ease-in duration-300"
-              : "sm:hidden absolute top-0 left-[-100%] right-0 bottom-0 flex justify-center items-center w-full h-screen bg-black text-center ease-in duration-300"
-          }
-        >
-          <ul>
-            <li
-              onClick={handleNav}
-              className="p-4 text-4xl hover:text-gray-500"
-            >
-              <Link href="/about">About</Link>
-            </li>
-            <li
-              onClick={handleNav}
-              className="p-4 text-4xl hover:text-gray-500"
-            >
-              <Link href="/events">Events</Link>
-            </li>
-            <li
-              onClick={handleNav}
-              className="p-4 text-4xl hover:text-gray-500"
-            >
-              <Link href="/services">Services</Link>
-            </li>
-            <li
-              onClick={handleNav}
-              className="p-4 text-4xl hover:text-gray-500"
-            >
-              <Link href="/contact">Contact</Link>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
+      </header1>
+    </>
   );
-};
+}
 
 export default Navbar;

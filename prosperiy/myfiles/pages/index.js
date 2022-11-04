@@ -16,7 +16,11 @@ export default function Home() {
       <Head>
         <title>Prosperity Travels | Travel with Prosperity</title>
         <Link rel="preconnect" href="https://fonts.googleapis.com" />
-        <Link rel="preconnect" href="https://fonts.gstatic.com" />
+        <Link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <Link
+          href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400&family=Finlandica:wght@400;500&family=Noto+Sans:ital,wght@0,300;0,400;0,500;0,600;1,200;1,300&display=swap"
+          rel="stylesheet"
+        />
       </Head>
       <Navbar />
       <MidContent />

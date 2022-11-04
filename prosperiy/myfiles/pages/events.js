@@ -1,13 +1,17 @@
-import React from 'react'
-
+import React from "react";
+import Slider from "../components/Slider";
+import MidContent from "../components/midContent";
+import { SliderData } from "../components/SliderData";
 const events = () => {
   return (
-    <div className='bg-black flex items-center justify-center md-12 bg-fixed text-white w-100% h-100vh '>
-        <div className='p-4 text-white pt-20 w-100% h-100vh'>
-            <h1>Events Page</h1>
-        </div>
-    </div>
-  )
-}
+    <>
+      <div className="eventsPosition">
+        <MidContent />
+        <Slider slides={SliderData} />
+        <Slider slides={SliderData} />
+      </div>
+    </>
+  );
+};
 
-export default events
+export default events;
