@@ -16,7 +16,7 @@ html {
 
 .mid_content {
   background-image: linear-gradient(5deg, #000000ba, transparent),
-    url(/img/8.jpg);
+    url(/img/7.jpg);
   background-position: center;
   background-size: cover;
   height: 100vh;
@@ -131,7 +131,7 @@ p.italic {
   transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
 }
 li.p-4 {
-  font-size: 24px;
+  font-size: 21px;
 }
 .container2 {
   position: relative;
@@ -237,7 +237,7 @@ li.p-4.submenuBar:hover .sub-menu.mega-menu.mega-menu-column-4 {
   --red: hsl(0, 78%, 62%);
   --cyan: hsl(180, 62%, 55%);
   --orange: hsl(34, 97%, 64%);
-  --blue: hsl(212, 86%, 64%);
+  --blue: hsl(228, 45%, 44%);
   --varyDarkBlue: hsl(234, 12%, 34%);
   --grayishBlue: hsl(229, 6%, 66%);
   --veryLightGray: hsl(0, 0%, 98%);
@@ -258,11 +258,28 @@ h1:first-of-type {
   font-weight: var(--weight1);
   color: var(--varyDarkBlue);
 }
-
-h1:last-of-type {
-  color: var(--varyDarkBlue);
+.sliderBottomContent {
+  background: linear-gradient(10deg, #000000ba, transparent), url(/img/6.jpg);
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+  margin-top: 90px;
 }
-
+.sliderCenterContent {
+  width: 34%;
+  margin: auto;
+  text-align: center;
+  background: #4d8ced;
+  color: white;
+  padding: 90px 100px;
+}
+.sliderCenterContent h2 {
+  color: white;
+  font-weight: bold;
+  margin: 40px 0;
+  line-height: 46px;
+  font-size: 30px;
+}
 @media (max-width: 400px) {
   h1 {
     font-size: 1.5rem;
@@ -355,6 +372,7 @@ img {
 @media (max-width: 1000px) {
   .aboutContent {
     width: auto;
+    margin: 20px;
   }
   .sectionForAboutus {
     display: block;
@@ -362,5 +380,58 @@ img {
   }
   .aboutColumn {
     width: 90%;
+  }
+  .container2 {
+    position: relative;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    display: block;
+    height: auto;
+  }
+  .container2 .card {
+    position: relative;
+    max-width: 300px;
+    height: 215px;
+    background-color: #fff;
+    margin: 80px auto;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 5px 20px rgb(0 0 0 / 50%);
+    transition: 0.3s ease-in-out;
+    border-radius: 15px;
+  }
+  .container2 .card:hover .content {
+    margin-top: 60px;
+  }
+  .container2 .card .image {
+    position: relative;
+    width: 260px;
+    height: 260px;
+    top: -30%;
+    left: 0;
+    box-shadow: 0 5px 20px rgb(0 0 0 / 20%);
+    z-index: 1;
+    border-radius: 40px;
+    margin: auto;
+  }
+  .sliderCenterContent p {
+    font-size: 14px;
+    padding: 30px 10px 0 10px;
+  }
+  .sliderCenterContent h2 {
+    color: white;
+    font-weight: bold;
+    margin: 0;
+    line-height: 23px;
+    font-size: 20px;
+  }
+  .sliderCenterContent {
+    width: 50%;
+    margin: auto;
+    text-align: center;
+    background: #4d8ced;
+    color: white;
+    padding: 40px 0;
   }
 }

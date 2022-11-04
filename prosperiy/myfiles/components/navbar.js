@@ -5,6 +5,7 @@ const Navbar = () => {
   const [nav, setNav] = useState(false);
   const [color, setColor] = useState("transparent");
   const [textColor, setTextColor] = useState("white");
+  const [iconColor, setIconColor] = useState("white");
   const handleNav = () => {
     setNav(!nav);
   };
@@ -42,98 +43,98 @@ const Navbar = () => {
             <Link href="/services  ">Services</Link>
             <div className="sub-menu mega-menu mega-menu-column-4">
               <div className="list-item">
-                <h4 className="title">Men's Fashion</h4>
+                <h4 className="title">About Us</h4>
                 <ul>
                   <li>
-                    <a href="#">Product List</a>
+                    <a href="#">Link</a>
                   </li>
                   <li>
-                    <a href="#">Product List</a>
+                    <a href="#">Link</a>
                   </li>
                   <li>
-                    <a href="#">Product List</a>
+                    <a href="#">Link</a>
                   </li>
                   <li>
-                    <a href="#">Product List</a>
+                    <a href="#">Link</a>
                   </li>
                   <li>
-                    <a href="#">Product List</a>
+                    <a href="#">Link</a>
                   </li>
                 </ul>
-                <h4 className="title">Beauty</h4>
+                <h4 className="title">About Us</h4>
                 <ul>
                   <li>
-                    <a href="#">Product List</a>
+                    <a href="#">Link</a>
                   </li>
                   <li>
-                    <a href="#">Product List</a>
+                    <a href="#">Link</a>
                   </li>
                   <li>
-                    <a href="#">Product List</a>
-                  </li>
-                </ul>
-              </div>
-              <div className="list-item">
-                <h4 className="title">Women's Fashion</h4>
-                <ul>
-                  <li>
-                    <a href="#">Product List</a>
-                  </li>
-                  <li>
-                    <a href="#">Product List</a>
-                  </li>
-                  <li>
-                    <a href="#">Product List</a>
-                  </li>
-                  <li>
-                    <a href="#">Product List</a>
-                  </li>
-                </ul>
-                <h4 className="title">Furniture</h4>
-                <ul>
-                  <li>
-                    <a href="#">Product List</a>
-                  </li>
-                  <li>
-                    <a href="#">Product List</a>
-                  </li>
-                  <li>
-                    <a href="#">Product List</a>
-                  </li>
-                  <li>
-                    <a href="#">Product List</a>
+                    <a href="#">Link</a>
                   </li>
                 </ul>
               </div>
               <div className="list-item">
-                <h4 className="title">Home, Kitchen</h4>
+                <h4 className="title">About Us</h4>
                 <ul>
                   <li>
-                    <a href="#">Product List</a>
+                    <a href="#">Link</a>
                   </li>
                   <li>
-                    <a href="#">Product List</a>
+                    <a href="#">Link</a>
                   </li>
                   <li>
-                    <a href="#">Product List</a>
+                    <a href="#">Link</a>
                   </li>
                   <li>
-                    <a href="#">Product List</a>
+                    <a href="#">Link</a>
+                  </li>
+                </ul>
+                <h4 className="title">About Us</h4>
+                <ul>
+                  <li>
+                    <a href="#">Link</a>
                   </li>
                   <li>
-                    <a href="#">Product List</a>
+                    <a href="#">Link</a>
                   </li>
                   <li>
-                    <a href="#">Product List</a>
+                    <a href="#">Link</a>
                   </li>
                   <li>
-                    <a href="#">Product List</a>
+                    <a href="#">Link</a>
+                  </li>
+                </ul>
+              </div>
+              <div className="list-item">
+                <h4 className="title">About Us</h4>
+                <ul>
+                  <li>
+                    <a href="#">Link</a>
                   </li>
                   <li>
-                    <a href="#">Product List</a>
+                    <a href="#">Link</a>
                   </li>
                   <li>
-                    <a href="#">Product List</a>
+                    <a href="#">Link</a>
+                  </li>
+                  <li>
+                    <a href="#">Link</a>
+                  </li>
+                  <li>
+                    <a href="#">Link</a>
+                  </li>
+                  <li>
+                    <a href="#">Link</a>
+                  </li>
+                  <li>
+                    <a href="#">Link</a>
+                  </li>
+                  <li>
+                    <a href="#">Link</a>
+                  </li>
+                  <li>
+                    <a href="#">Link</a>
                   </li>
                 </ul>
               </div>
@@ -148,7 +149,7 @@ const Navbar = () => {
         {/* Mobile Button */}
         <div onClick={handleNav} className="block sm:hidden z-10">
           {nav ? (
-            <AiOutlineClose size={20} style={{ color: `${textColor}` }} />
+            <AiOutlineClose size={20} style={{ color: `${iconColor}` }} />
           ) : (
             <AiOutlineMenu size={20} style={{ color: `${textColor}` }} />
           )}
@@ -166,19 +167,19 @@ const Navbar = () => {
               onClick={handleNav}
               className="p-4 text-4xl hover:text-gray-500"
             >
-              <Link href="/">Home</Link>
+              <Link href="/about">About</Link>
             </li>
             <li
               onClick={handleNav}
               className="p-4 text-4xl hover:text-gray-500"
             >
-              <Link href="/#gallery">Gallery</Link>
+              <Link href="/events">Events</Link>
             </li>
             <li
               onClick={handleNav}
               className="p-4 text-4xl hover:text-gray-500"
             >
-              <Link href="/work">Work</Link>
+              <Link href="/services">Services</Link>
             </li>
             <li
               onClick={handleNav}

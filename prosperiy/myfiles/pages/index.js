@@ -6,6 +6,7 @@ import Whywe from "../components/whywe";
 import MidContent from "../components/midContent";
 import AboutCards from "../components/aboutCards";
 import Whatwedo from "../components/whatwedo";
+import Careers from "../components/careers";
 export default function Home() {
   return (
     <div>
@@ -23,6 +24,7 @@ export default function Home() {
       <Whywe />
       <Whatwedo />
       <AboutCards />
+      <Careers />
     </div>
   );
 }
