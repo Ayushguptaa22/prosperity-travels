@@ -26,17 +26,13 @@ const Slider = ({ slides }) => {
         <span className="format">Fun @</span> Prosperity
       </h2>
       <div>
-        {SliderData.map((slide, index) => {
-          return (
-            <div
-              key={index}
-              className={
-                index === current
-                  ? "opacity-[1] ease-in duration-1000"
-                  : "opacity-[0]"
-              }
-            >
-              <div className="relative flex justify-center p-4 pb-1">
+        <div className="relative customSlider flex justify-center p-4 pb-1">
+          {SliderData.map((slide, index) => {
+            return (
+              <div
+                key={index}
+                className={index === current ? "opacity-[1]" : "opacity-[0]"}
+              >
                 <FaArrowCircleLeft
                   onClick={prevSlide}
                   className="absolute top-[50%] left-[20px] text-white/70 cursor-pointer select-none z-[2]"
@@ -58,9 +54,9 @@ const Slider = ({ slides }) => {
                   size={40}
                 />
               </div>
-            </div>
-          );
-        })}
+            );
+          })}
+        </div>
       </div>
     </div>
   );
