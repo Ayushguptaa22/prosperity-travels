@@ -7,6 +7,9 @@ import MidContent from "../components/midContent";
 import AboutCards from "../components/aboutCards";
 import Whatwedo from "../components/whatwedo";
 import Careers from "../components/careers";
+import Footer from "../components/footer";
+import Slider from "../components/slider";
+
 export default function Home() {
   return (
     <div>
@@ -14,17 +17,16 @@ export default function Home() {
         <title>Prosperity Travels | Travel with Prosperity</title>
         <Link rel="preconnect" href="https://fonts.googleapis.com" />
         <Link rel="preconnect" href="https://fonts.gstatic.com" />
-        <Link
-          href="https://fonts.googleapis.com/css2?family=Finlandica:wght@400;500&family=Poppins&display=swap"
-          rel="stylesheet"
-        />
       </Head>
+
       <Navbar />
       <MidContent />
       <Whywe />
       <Whatwedo />
       <AboutCards />
+      <Slider />
       <Careers />
+      <Footer />
     </div>
   );
 }
